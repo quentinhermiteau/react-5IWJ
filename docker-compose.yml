@@ -1,0 +1,13 @@
+version: "3"
+services:
+  react:
+    image: node:20.0.0-alpine
+    user: node
+    working_dir: /home/node
+    tty: true
+    stdin_open: true
+    entrypoint: node
+    ports:
+      - 3000:3000
+    volumes:
+      - .:/home/node
