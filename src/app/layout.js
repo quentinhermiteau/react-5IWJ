@@ -28,6 +28,9 @@ i18n
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
+      <head>
+        <link href="https://api.mapbox.com/mapbox-gl-js/v2.6.1/mapbox-gl.css" rel="stylesheet" />
+      </head>
       {/* <body className="flex h-screen"> */}
       <body>
         <div className="m-auto">
