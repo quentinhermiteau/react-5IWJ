@@ -1,0 +1,6 @@
+{
+    "message": {
+        "username": "Username cannot {{number}} be empty",
+        "email": "Email not OK"
+    }
+}
