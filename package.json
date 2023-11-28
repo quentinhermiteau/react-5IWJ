@@ -6,13 +6,19 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "eslint": "eslint src",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.3.2",
+    "@tanstack/react-query": "^5.4.3",
+    "@tanstack/react-query-devtools": "^5.4.3",
     "@types/mapbox-gl": "^2.7.17",
     "apexcharts": "^3.44.0",
     "autoprefixer": "10.4.15",
+    "axios": "^1.6.0",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
     "i18next": "^23.6.0",
@@ -26,6 +32,25 @@
     "react-i18next": "^13.3.1",
     "react-map-gl": "^7.1.6",
     "tailwindcss": "3.3.3",
-    "zod": "^3.22.4"
+    "zod": "^3.22.4",
+    "zustand": "^4.4.6"
+  },
+  "eslintConfig": {
+    "extends": [
+      "plugin:storybook/recommended"
+    ]
+  },
+  "devDependencies": {
+    "@storybook/addon-essentials": "^7.5.2",
+    "@storybook/addon-interactions": "^7.5.2",
+    "@storybook/addon-links": "^7.5.2",
+    "@storybook/addon-onboarding": "^1.0.8",
+    "@storybook/blocks": "^7.5.2",
+    "@storybook/nextjs": "^7.5.2",
+    "@storybook/react": "^7.5.2",
+    "@storybook/testing-library": "^0.2.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-storybook": "^0.6.15",
+    "storybook": "^7.5.2"
   }
 }

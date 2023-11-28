@@ -6,6 +6,9 @@ import { initReactI18next } from "react-i18next";
 
 import en from '../translations/en/global.json';
 import fr from '../translations/fr/global.json';
+import { createContext, useState } from "react";
+import { AuthProvider } from "@/contexts/AuthProvider";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
 i18n
   .use(initReactI18next) // passes i18n down to react-i18next
@@ -25,7 +28,13 @@ i18n
     }
   });
 
+export const ThemeContext = createContext();
+
+const queryClient = new QueryClient()
+
 export default function RootLayout({ children }) {
+  const [theme, setTheme] = useState('light');
+
   return (
     <html lang="en">
       <head>
@@ -33,9 +42,15 @@ export default function RootLayout({ children }) {
       </head>
       {/* <body className="flex h-screen"> */}
       <body>
-        <div className="m-auto">
-          {children}
-        </div>
+        <QueryClientProvider client={queryClient}>
+          <AuthProvider>
+            <ThemeContext.Provider value={{theme, setTheme}}>
+              <div className="m-auto">
+                {children}
+              </div>
+            </ThemeContext.Provider>
+          </AuthProvider>
+        </QueryClientProvider>
       </body>
     </html>
   )

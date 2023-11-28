@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import Header from '../_components/header/index'
 
 export default ({ params }) => {
-    console.log(params.ressource);
+    // console.log(params.ressource);
     const ressources = ['posts', 'comments', 'albums', 'photos', 'todos', 'users'];
     const [data, setData] = useState([]);
     const [loading, setLoading] = useState(false);
@@ -17,7 +17,7 @@ export default ({ params }) => {
                 .then(json => {
                     if (params.ressource === 'users') {
                         setData(json.map(item => {
-                            console.log(item);
+                            // console.log(item);
                             return { ...item, address: item.address.city, company: item.company.name }
                         }))
                     } else {
